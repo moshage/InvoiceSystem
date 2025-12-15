@@ -23,7 +23,8 @@ namespace NFSystem.Data
 
             modelBuilder.Entity<Invoices>()
                 .Property(n => n.CriationDate)
-                .HasColumnType("GETDATE()");
+                .HasColumnType("datetime")
+                .HasDefaultValueSql("GETUTCDATE()");
         }
     }
 }
